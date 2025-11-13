@@ -271,25 +271,22 @@
                 </div>
 
                 <div>
-                    <label for="descripcion">Descripción Personal:</label>
+                    <label for="descripcion">Comentario Perso:</label>
                     <textarea id="descripcion" name="descripcion" maxlength="150" placeholder="Cuéntanos un poco sobre ti..."></textarea>
                     <p id="contador">0/150 caracteres</p>
                 </div>
 
-                <div class="terminos">
-                    <input type="checkbox" id="terminos" name="terminos" required>
-                    <label for="terminos">Acepto los <a href="#" target="_blank">términos y condiciones</a>.</label>
+                <div class="terminos-container">
+                    <input type="checkbox" id="terminos">
+                    <label for="terminos">Acepto los <a href="#" style="color:#0d47a1; font-weight:bold;">términos y condiciones</a>.</label>
                 </div>
-                <p class="error" id="error-terminos">Debes aceptar los términos y condiciones.</p>
+                <span id="error-terminos" class="error">Debes aceptar los términos.</span>
+
 
                 <button type="submit" class="btn">Enviar Registro</button>
                 <button type="reset" class="btn" style="background:#555;">Borrar <i class="bi bi-trash3"></i></button>
-                <div class="progreso">
-                    <div class="barra" id="barra"></div>
-                </div>
-
-                <div class="mensaje-exito" id="mensaje-exito">✅ Registro completado correctamente.</div>
-                <div class="mensaje-error" id="mensaje-error">❌ Por favor corrige los errores e inténtalo nuevamente.</div>
+                <div class="mensaje-exito" id="mensaje-exito"> Registro completado correctamente.</div>
+                <div class="mensaje-error" id="mensaje-error"> Por favor corrige los errores e inténtalo nuevamente.</div>
                 <div style="background:#ccc; border-radius:10px; overflow:hidden; margin:15px 0;">
                     <div id="barraProgreso" style="background:#1d496d; color:white; width:0%; padding:5px 0; transition:width 0.4s;">
                         0%

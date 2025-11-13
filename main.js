@@ -114,21 +114,27 @@ form.addEventListener('submit', function(e) {
     msgExito.style.display = 'block';
     form.reset();
     contador.textContent = "0/150 caracteres";
-    ActualizarProgreso(); // Reinicia la barra al enviar
+    ActualizarProgreso();
 });
 
 
 function ActualizarProgreso() {
     let completados = 0;
-    const total = campos.length;
 
-    campos.forEach((id) => {
+    // Incluimos la descripción también en el conteo
+    const camposTotales = [...campos, 'descripcion'];
+    const total = camposTotales.length;
+
+    camposTotales.forEach((id) => {
         const campo = document.getElementById(id);
+
+        // Si no es checkbox y tiene contenido
         if (campo.type !== "checkbox" && campo.value.trim() !== "") {
             completados++;
         }
     });
 
+    // Calcular el porcentaje de avance
     const porcentaje = Math.round((completados / total) * 100);
     const barra = document.getElementById("barraProgreso");
 
